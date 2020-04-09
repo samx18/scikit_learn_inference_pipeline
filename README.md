@@ -19,7 +19,24 @@ The dataset is available from UCI Machine Learning; the aim for this task is to 
 * sex: categories encoded as strings {'M', 'F', 'I'} where 'I' is Infant
 
 ## Inference
+We will use SageMaker Linear Learner algorithm to infer the number of rings on the Abalone and use it for determining its age - rings +1.5 == the age in years.
 
-rings +1.5 gives the age in years
+## Preprocessing 
+The first part of our pipeline will use Scikit-learn to do preprocessing. The `sklearn_abalone_featurizer.py` contains the preprocessing code. 
+
+## Training 
+
+Once the data has been preprocessed , we will feed that to SageMaker's built in Linear Learner algorithm for training
+
+## Pipeline Setup
+
+In this example, we configure our pipeline model with the fitted Scikit-learn inference model and the fitted Linear Learner model. Deploying the model follows the same deploy pattern in the SDK.
+
+![](pipeline.png)
+
+
+
+
+
 
 
